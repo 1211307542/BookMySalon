@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="BookAppointment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serviceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookAppointmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookAppointmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableStaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serviceType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableStaffResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAppointmentsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppointmentsByCustomerResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bookingId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelBookingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePreferences">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stylist" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notification" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePreferencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SavePreferencesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllBookings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllBookingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllBookingsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPreferences">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPreferencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPreferencesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="BookAppointmentSoapIn">
+    <wsdl:part name="parameters" element="tns:BookAppointment" />
+  </wsdl:message>
+  <wsdl:message name="BookAppointmentSoapOut">
+    <wsdl:part name="parameters" element="tns:BookAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableStaff" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppointmentsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppointmentsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelBooking" />
+  </wsdl:message>
+  <wsdl:message name="CancelBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePreferencesSoapIn">
+    <wsdl:part name="parameters" element="tns:SavePreferences" />
+  </wsdl:message>
+  <wsdl:message name="SavePreferencesSoapOut">
+    <wsdl:part name="parameters" element="tns:SavePreferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBookingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllBookings" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBookingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllBookingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPreferencesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPreferences" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPreferencesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPreferencesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SalonServiceSoap">
+    <wsdl:operation name="BookAppointment">
+      <wsdl:input message="tns:BookAppointmentSoapIn" />
+      <wsdl:output message="tns:BookAppointmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableStaff">
+      <wsdl:input message="tns:GetAvailableStaffSoapIn" />
+      <wsdl:output message="tns:GetAvailableStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentsByCustomer">
+      <wsdl:input message="tns:GetAppointmentsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetAppointmentsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <wsdl:input message="tns:CancelBookingSoapIn" />
+      <wsdl:output message="tns:CancelBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePreferences">
+      <wsdl:input message="tns:SavePreferencesSoapIn" />
+      <wsdl:output message="tns:SavePreferencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBookings">
+      <wsdl:input message="tns:GetAllBookingsSoapIn" />
+      <wsdl:output message="tns:GetAllBookingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPreferences">
+      <wsdl:input message="tns:GetAllPreferencesSoapIn" />
+      <wsdl:output message="tns:GetAllPreferencesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SalonServiceSoap" type="tns:SalonServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BookAppointment">
+      <soap:operation soapAction="http://tempuri.org/BookAppointment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableStaff">
+      <soap:operation soapAction="http://tempuri.org/GetAvailableStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetAppointmentsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <soap:operation soapAction="http://tempuri.org/CancelBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePreferences">
+      <soap:operation soapAction="http://tempuri.org/SavePreferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBookings">
+      <soap:operation soapAction="http://tempuri.org/GetAllBookings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPreferences">
+      <soap:operation soapAction="http://tempuri.org/GetAllPreferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SalonServiceSoap12" type="tns:SalonServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BookAppointment">
+      <soap12:operation soapAction="http://tempuri.org/BookAppointment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableStaff">
+      <soap12:operation soapAction="http://tempuri.org/GetAvailableStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetAppointmentsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <soap12:operation soapAction="http://tempuri.org/CancelBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePreferences">
+      <soap12:operation soapAction="http://tempuri.org/SavePreferences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBookings">
+      <soap12:operation soapAction="http://tempuri.org/GetAllBookings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPreferences">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPreferences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SalonService">
+    <wsdl:port name="SalonServiceSoap" binding="tns:SalonServiceSoap">
+      <soap:address location="https://localhost:44356/SalonService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SalonServiceSoap12" binding="tns:SalonServiceSoap12">
+      <soap12:address location="https://localhost:44356/SalonService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
