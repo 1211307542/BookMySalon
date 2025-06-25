@@ -2,11 +2,11 @@
 
 A comprehensive salon booking and management system built with C# Windows Forms and ASP.NET Web Services.
 
-## 📋 Overview
+## Overview
 
 BookMyStyle is a full-stack application that allows customers to book salon appointments and manage their preferences. The system consists of a Windows Forms client application and a web service backend.
 
-## 🏗️ Architecture
+## Architecture
 
 ### Client Application (BookMyStyleClient)
 - **Technology**: C# Windows Forms (.NET Framework)
@@ -27,7 +27,7 @@ BookMyStyle is a full-stack application that allows customers to book salon appo
   - Appointment management operations
   - Customer preference management
 
-## 🚀 Features
+## Features
 
 ### Customer Features
 - **User Authentication**: Secure login system
@@ -46,7 +46,7 @@ BookMyStyle is a full-stack application that allows customers to book salon appo
 - **Data Persistence**: File-based storage for bookings and preferences
 - **Service Integration**: Web service communication between client and server
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 BookMyStyle/
@@ -70,7 +70,7 @@ BookMyStyle/
     └── Web.config              # Service configuration
 ```
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **Frontend**: C# Windows Forms (.NET Framework)
 - **Backend**: ASP.NET Web Services (ASMX)
@@ -78,7 +78,7 @@ BookMyStyle/
 - **Communication**: SOAP Web Services
 - **Development Environment**: Visual Studio
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Visual Studio 2019 or later
@@ -102,7 +102,7 @@ BookMyStyle/
    - Start the web service first (BookMyStyleService)
    - Then run the client application (BookMyStyleClient)
 
-## 🔧 Configuration
+## Configuration
 
 ### Web Service Configuration
 - The web service runs on IIS Express by default
@@ -113,14 +113,14 @@ BookMyStyle/
 - Service references are automatically configured
 - Application settings are stored in `App.config`
 
-## 📊 Data Storage
+## Data Storage
 
 The system uses simple text files for data persistence:
 
 - **bookings.txt**: Stores appointment information
 - **preferences.txt**: Stores customer preferences
 
-## 🔌 API Endpoints
+## API Endpoints
 
 The web service provides the following operations:
 
@@ -133,18 +133,18 @@ The web service provides the following operations:
 - `GetAllPreferences`: Retrieve all preferences
 - `GetAppointmentsByCustomer`: Get customer-specific appointments
 
-## 👥 User Roles
+## User Roles
 
 1. **Customers**: Can book appointments, manage preferences, view history
 2. **Staff**: Can view bookings, manage availability through dashboard
 
-## 🔒 Security
+## Security
 
 - User authentication required for all operations
 - Session-based security
 - Input validation on both client and server
 
-## 🚀 Usage
+## Usage
 
 1. **Customer Login**: Use the login form to authenticate
 2. **Main Menu**: Navigate through available options
@@ -153,7 +153,7 @@ The web service provides the following operations:
 5. **Preferences**: Set and update personal preferences
 6. **History**: View past appointments
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
@@ -161,18 +161,14 @@ The web service provides the following operations:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👨‍💻 Author
+## Author
 
 - **GitHub**: [1211307542](https://github.com/1211307542)
 
-## 📞 Support
-
-For support and questions, please open an issue on GitHub or contact the development team.
-
 ---
 
-**Note**: This is a demonstration project showcasing Windows Forms development with web service integration. For production use, consider implementing a more robust database solution and additional security measures.
+**Note**: This is a demonstration project showcasing Windows Forms development with web service integration. 
